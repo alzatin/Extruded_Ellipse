@@ -1,13 +1,108 @@
 {
-    "atomType": "Molecule",
-    "x": 0,
-    "y": 0,
-    "uniqueID": "id-1",
-    "name": "Extruded_Ellipse",
-    "topLevel": true,
-    "allAtoms": [],
-    "allConnectors": [],
-    "unitsKey": "Unitless",
-    "fileTypeVersion": 1,
-    "filetypeVersion": 1
+  "atomType": "Molecule",
+  "x": 0,
+  "y": 0,
+  "uniqueID": "id-1",
+  "name": "Extruded_Ellipse",
+  "ioValues": [
+    {
+      "name": "Major_radius",
+      "ioValue": 10,
+      "currentEquation": "10"
+    },
+    {
+      "name": "Minor_radius",
+      "ioValue": 5
+    },
+    {
+      "name": "Height",
+      "ioValue": 3,
+      "currentEquation": "3"
+    }
+  ],
+  "topLevel": true,
+  "allAtoms": [
+    {
+      "atomType": "Output",
+      "x": 0.98,
+      "y": 0.5,
+      "uniqueID": "id-2",
+      "ioValues": [
+        {
+          "name": "number or geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
+      "atomType": "Input",
+      "x": 0.0264,
+      "y": 0.2620481927710844,
+      "uniqueID": "id-4",
+      "name": "Major_radius"
+    },
+    {
+      "atomType": "Input",
+      "x": 0.0264,
+      "y": 0.35804819277108435,
+      "uniqueID": "id-7",
+      "name": "Minor_radius"
+    },
+    {
+      "atomType": "Input",
+      "x": 0.0264,
+      "y": 0.46987951807228917,
+      "uniqueID": "id-10",
+      "name": "Height"
+    },
+    {
+      "atomType": "Code",
+      "x": 0.42857142857142855,
+      "y": 0.45783132530120485,
+      "uniqueID": "id-13",
+      "ioValues": [
+        {
+          "name": "height",
+          "ioValue": 3,
+          "currentEquation": "3"
+        },
+        {
+          "name": "minorRadius",
+          "ioValue": 5,
+          "currentEquation": "8"
+        },
+        {
+          "name": "majorRadius",
+          "ioValue": 10
+        }
+      ],
+      "codeVersion": 1,
+      "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"minorRadius\", type: \"number\", defaultValue: 5 },\n  { inputName: \"majorRadius\", type: \"number\", defaultValue: 10 },\n  { inputName: \"height\", type: \"number\", defaultValue: 3 }\n];\n\n\nlet newPlane = replicad.makePlane()\nlet elliDraw = replicad.drawEllipse(majorRadius, minorRadius)\nlet sketchCir = elliDraw.sketchOnPlane(newPlane)\nlet elli = sketchCir.extrude(height)\n\nlet elliObj = {\n  geometry: [elli],\n  dimension: \"3D\",\n  tags: [\"createdShape\"],\n  color: '#A3CE5B',\n  plane: newPlane,\n  bom: [],\n}\n\nreturn elliObj\n\n/*let assembly = await Assembly([importedShape, cylObj]);\nreturn assembly;*/\n"
+    }
+  ],
+  "allConnectors": [
+    {
+      "ap2Name": "majorRadius",
+      "ap1ID": "id-4",
+      "ap2ID": "id-13"
+    },
+    {
+      "ap2Name": "minorRadius",
+      "ap1ID": "id-7",
+      "ap2ID": "id-13"
+    },
+    {
+      "ap2Name": "height",
+      "ap1ID": "id-10",
+      "ap2ID": "id-13"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-13",
+      "ap2ID": "id-2"
+    }
+  ],
+  "unitsKey": "Unitless",
+  "fileTypeVersion": 1,
+  "filetypeVersion": 1
 }
