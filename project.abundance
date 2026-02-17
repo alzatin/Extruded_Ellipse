@@ -7,8 +7,7 @@
   "ioValues": [
     {
       "name": "Major_radius",
-      "ioValue": 10,
-      "currentEquation": "10"
+      "ioValue": 10
     },
     {
       "name": "Minor_radius",
@@ -16,8 +15,7 @@
     },
     {
       "name": "Height",
-      "ioValue": 3,
-      "currentEquation": "3"
+      "ioValue": 3
     }
   ],
   "topLevel": true,
@@ -37,21 +35,21 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.2620481927710844,
+      "y": 0.16,
       "uniqueID": "id-4",
       "name": "Major_radius"
     },
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.35804819277108435,
+      "y": 0.256,
       "uniqueID": "id-7",
       "name": "Minor_radius"
     },
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.46987951807228917,
+      "y": 0.352,
       "uniqueID": "id-10",
       "name": "Height"
     },
@@ -63,13 +61,11 @@
       "ioValues": [
         {
           "name": "height",
-          "ioValue": 3,
-          "currentEquation": "3"
+          "ioValue": 3
         },
         {
           "name": "minorRadius",
-          "ioValue": 5,
-          "currentEquation": "8"
+          "ioValue": 5
         },
         {
           "name": "majorRadius",
